@@ -1,6 +1,8 @@
 # disney-lab-challenge
 Proyecto para el challenge de ingreso a la aceleración Alkemy
 
-
-# Modelo de base de datos
-![image](https://user-images.githubusercontent.com/80182107/141182102-e003cd1e-481d-4247-b719-e0b3b3ee1f10.png)
+# disney-lab-challenge
+Objetivo
+Desarrollar una API para explorar el mundo de Disney, la cual permitirá conocer y modificar los
+personajes que lo componen y entender en qué películas estos participaron. Por otro lado, deberá
+exponer la información para que cualquier frontend pueda consumirla.
