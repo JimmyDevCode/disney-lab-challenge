@@ -23,6 +23,8 @@ public class PeliculaEntity {
 
     private String imagen;
 
+    private String titulo;
+
     @Column(name = "fecha_creacion")
     @DateTimeFormat(pattern = "yyyy/MM/dd")
     private LocalDate fechaCreacion;
@@ -36,9 +38,6 @@ public class PeliculaEntity {
 
     @Column(name = "genero_id", nullable = false)
     private Long generoId;
-
-    @Column(name = "continente_id", nullable = false)
-    private Long continenteId;
 
     @ManyToMany(
             cascade = {
@@ -54,10 +53,10 @@ public class PeliculaEntity {
 
     private boolean deleted = Boolean.FALSE;
 
-    public void addPersonaje(PersonajeEntity icon){
-        this.personajes.add(icon);
+    public void addPersonaje(PersonajeEntity personaje){
+        this.personajes.add(personaje);
     }
-    public void removeIcon(PersonajeEntity icon){
-        this.personajes.remove(icon);
+    public void removePersonaje(PersonajeEntity personaje){
+        this.personajes.remove(personaje);
     }
 }
