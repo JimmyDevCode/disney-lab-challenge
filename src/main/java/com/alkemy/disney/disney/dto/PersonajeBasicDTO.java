@@ -10,4 +10,6 @@ public class PersonajeBasicDTO {
     private Long id;
     private String imagen;
     private String nombre;
+
+
 }

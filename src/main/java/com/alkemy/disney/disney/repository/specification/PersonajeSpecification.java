@@ -32,7 +32,7 @@ public class PersonajeSpecification {
                 );
             }
             if (StringUtils.hasLength(filtersDto.getAge())) {
-                Long edad = Long.parseLong(filtersDto.getAge());
+                Integer edad = Integer.parseInt(filtersDto.getAge());
                 predicates.add(
                         criteriaBuilder.equal(root.get("edad"), edad)
                 );

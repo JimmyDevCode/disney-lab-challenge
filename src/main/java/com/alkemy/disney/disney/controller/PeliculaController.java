@@ -40,11 +40,8 @@ public class PeliculaController {
         return ResponseEntity.status(HttpStatus.OK).body(peliculas);
     }
 
-
-
     @PostMapping
     public ResponseEntity <PeliculaDTO> save(@RequestBody PeliculaDTO pelicula){
-        //save pais
         PeliculaDTO peliculaSaved = peliculaService.save(pelicula);
         return ResponseEntity.status(HttpStatus.CREATED).body(peliculaSaved);
     }

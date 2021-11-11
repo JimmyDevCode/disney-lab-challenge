@@ -22,7 +22,7 @@ public class PeliculaSpecification {
             if (StringUtils.hasLength(filtersDto.getName())) {
                 predicates.add(
                         criteriaBuilder.like(
-                                criteriaBuilder.lower(root.get("nombre")),
+                                criteriaBuilder.lower(root.get("titulo")),
                                 "%" + filtersDto.getName().toLowerCase() + "%"
                         )
                 );
@@ -37,7 +37,7 @@ public class PeliculaSpecification {
             //remove duplicates
             query.distinct(true);
 
-            String orderByField = "nombre";
+            String orderByField = "titulo";
             query.orderBy(
                     filtersDto.isASC() ?
                             criteriaBuilder.asc(root.get(orderByField)) :

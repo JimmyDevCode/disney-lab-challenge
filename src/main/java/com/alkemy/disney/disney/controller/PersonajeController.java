@@ -34,10 +34,10 @@ public class PersonajeController {
     @GetMapping("/filters")
     public ResponseEntity<List<PersonajeDTO>> getDetailsByFilters(
             @RequestParam(required = false) String name,
-            @RequestParam(required = false) String edad,
+            @RequestParam(required = false) String age,
             @RequestParam(required = false) Set<Long> movies
     ){
-        List<PersonajeDTO> personajes = personajeService.getByFilters(name, edad, movies);
+        List<PersonajeDTO> personajes = personajeService.getByFilters(name, age, movies);
         return ResponseEntity.status(HttpStatus.OK).body(personajes);
     }
 
