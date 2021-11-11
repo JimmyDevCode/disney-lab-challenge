@@ -30,6 +30,18 @@ public class PeliculaController {
         return ResponseEntity.status(HttpStatus.OK).body(pelicula);
     }
 
+    @GetMapping("/filters")
+    public ResponseEntity<List<PeliculaDTO>> getDetailsByFilters(
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String genre,
+            @RequestParam(required = false, defaultValue = "ASC") String order
+    ){
+        List<PeliculaDTO> peliculas = this.peliculaService.getByFilters(name, genre, order);
+        return ResponseEntity.status(HttpStatus.OK).body(peliculas);
+    }
+
+
+
     @PostMapping
     public ResponseEntity <PeliculaDTO> save(@RequestBody PeliculaDTO pelicula){
         //save pais

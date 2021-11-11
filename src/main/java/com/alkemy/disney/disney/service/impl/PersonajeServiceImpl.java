@@ -2,6 +2,7 @@ package com.alkemy.disney.disney.service.impl;
 
 import com.alkemy.disney.disney.dto.PersonajeBasicDTO;
 import com.alkemy.disney.disney.dto.PersonajeDTO;
+import com.alkemy.disney.disney.dto.PersonajeFiltersDTO;
 import com.alkemy.disney.disney.entity.PersonajeEntity;
 import com.alkemy.disney.disney.exception.ParamNotFound;
 import com.alkemy.disney.disney.mapper.PersonajeMapper;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class PersonajeServiceImpl implements PersonajeService {
@@ -72,7 +74,10 @@ public class PersonajeServiceImpl implements PersonajeService {
         return this.personajeRepository.getById(id);
     }
 
-    public List<PersonajeDTO> getByFilters(String name, String age, String movies) {
-        return null;
+    public List<PersonajeDTO> getByFilters(String name, String age, Set<Long> movies) {
+        PersonajeFiltersDTO filtersDto = new PersonajeFiltersDTO(name, age, movies);
+        List<PersonajeEntity> entities = this.personajeRepository.findAll(this.personajeSpecification.getByFilters(filtersDto));
+        List<PersonajeDTO> dtos = this.personajeMapper.personajeEntitySet2DTOList(entities, true);
+        return dtos;
     }
 }

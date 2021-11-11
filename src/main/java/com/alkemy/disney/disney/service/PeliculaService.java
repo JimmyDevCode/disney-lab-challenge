@@ -20,7 +20,7 @@ public interface PeliculaService {
 
     PeliculaDTO getDetailsById(Long id);
 
-    List<PeliculaDTO> getByFilters(String name, String genero, String order );
+    List<PeliculaDTO> getByFilters(String name, String genre, String order );
 
     void addPersonaje(Long id, Long idPersonaje);
 

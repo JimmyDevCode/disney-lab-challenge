@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("characters")
@@ -28,6 +29,16 @@ public class PersonajeController {
     public ResponseEntity<PersonajeDTO> getDetailsById(@PathVariable Long id) {
         PersonajeDTO personaje = personajeService.getDetailsById(id);
         return ResponseEntity.status(HttpStatus.OK).body(personaje);
+    }
+
+    @GetMapping("/filters")
+    public ResponseEntity<List<PersonajeDTO>> getDetailsByFilters(
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String edad,
+            @RequestParam(required = false) Set<Long> movies
+    ){
+        List<PersonajeDTO> personajes = personajeService.getByFilters(name, edad, movies);
+        return ResponseEntity.status(HttpStatus.OK).body(personajes);
     }
 
     @PostMapping
