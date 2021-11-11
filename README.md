@@ -38,9 +38,9 @@ Requerimientos técnicos
 11. Envío de Emails
     Al registrarse en el sitio, el usuario deberá recibir un email de bienvenida. Es recomendable, la
     utilización de algún servicio de terceros como SendGrid
-#Configuración email
+# Configuración email
 1. Para generar el envío de emails deben configurar la variable global "EMAIL_API_KEY" con el apiKEY que se genera al registrarse en Sengrid. Así como el correo con el que se registran
 2. Les brindo un enlace con la integración de sengrid + spring boot para que puedan configurarlo y entenderlo
 3. Enlace: https://medium.com/javarevisited/sending-emails-with-sendgrid-and-spring-boot-81e9637a1f05
-#Documentación Postman
+# Documentación Postman
 1. Dentro de la carpeta "documentacion.postman" hay un archivo .json con las diferentes peticiones.
