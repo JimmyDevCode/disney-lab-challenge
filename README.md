@@ -15,10 +15,10 @@ Requerimientos técnicos
    Para realizar peticiones a los endpoints subsiguientes el usuario deberá contar con un token que
    obtendrá al autenticarse. Para ello, deberán desarrollarse los endpoints de registro y login, que
    permitan obtener el token.
-   ![img_9.png](img_9.png)
+![img_9.png](img_9.png)
 
 3. Listado de Personaje
-   ![img_8.png](img_8.png)
+![img_8.png](img_8.png)
 
 4. Detalle de Personaje
       En el detalle deberán listarse todos los atributos del personaje, como así también sus películas o
